@@ -11,7 +11,7 @@ function calcularData(dataDesejada) {
     validarArgumentos();
     isAnoBissexto(2000);
     
-    console.log(MESES_BISSEXTO, MESES_NAO_BISSEXTO);
+    
 }
 
 function isAnoBissexto(ano) {
