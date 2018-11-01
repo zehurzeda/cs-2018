@@ -7,11 +7,16 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "nyc mocha",
+    "doc": "jsdoc **.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "mocha": "^5.2.0"
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "jsdoc": "^3.5.5",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }

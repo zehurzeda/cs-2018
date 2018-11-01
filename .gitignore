@@ -1,2 +1,6 @@
 node_modules/**
 node_modules/
+out/**
+out/
+.nyc_output/**
+.nyc_output/
