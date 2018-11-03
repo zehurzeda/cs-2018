@@ -77,9 +77,16 @@ function validaAno(a) {
     }
 }
 
+function validar(parametro, valorLimite, mensagemDeErro = "Parâmetro inválido!") {
+  if(typeof(parametro) !== "number" || parametro < valorLimite){
+    throw(new Error(mensagemDeErro));
+  }
+}
+
 exports.validarParametro = validarParametro;
 exports.validarParametros = validarParametros;
 exports.validarParametrosDivisao = validarParametrosDivisao;
 exports.validaDia = validaDia;
 exports.validaMes = validaMes;
 exports.validaAno = validaAno;
+exports.validar = validar;
