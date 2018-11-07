@@ -1,20 +1,20 @@
-const Validacao = require("./Validacao");
+const Validacao = require('./Validacao');
 
 /**
  * Primo - Algorítimo para verificar se o número é primo ou não
- * 
+ *
  * @param {numero} n - número para representar o número a ser verificado se é primo ou não
  */
 function primo(n) {
-    Validacao.validar(n, 2);
+  Validacao.validar(n, 2);
 
-    for(let i = 2; i < n; i++){
-        if (n%i === 0){
-            return false;
-        }
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) {
+      return false;
     }
+  }
 
-    return true;
+  return true;
 }
 
 exports.primo = primo;
