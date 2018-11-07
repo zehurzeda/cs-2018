@@ -1,4 +1,4 @@
-const Validacao = require('./Validacao');
+const Validacao = require('../topico-06/Validacao');
 
 /**
  * Dia da semana - dado o dia, mes e ano retornar o dia da semana 

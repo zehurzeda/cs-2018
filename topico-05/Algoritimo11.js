@@ -1,4 +1,4 @@
-const Validacao = require('./Validacao');
+const Validacao = require('../topico-06/Validacao');
 
 /**
  * Razão Áurea - Algorítimo para se obter a razão áurea entre x e y;
@@ -8,9 +8,9 @@ const Validacao = require('./Validacao');
  * @param {number} k 
  */
 function razaoAurea(x, y, k) {
-    Validacao.validar(x, 0, "Parâmetro 'x' inválido");
-    Validacao.validar(y, x + 1, "Parâmetro 'y' inválido");
-    Validacao.validar(k, 1, "Parâmetro 'k' inválido");
+    Validacao.validarNumeroInteiroMenorQueLimite(x, 0, "Parâmetro 'x' inválido");
+    Validacao.validarNumeroInteiroMenorQueLimite(y, x + 1, "Parâmetro 'y' inválido");
+    Validacao.validarNumeroInteiroMenorQueLimite(k, 1, "Parâmetro 'k' inválido");
 
     let c = y;
     let a = x;
