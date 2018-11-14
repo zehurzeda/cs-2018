@@ -7,8 +7,8 @@ const Validacao = require('../topico-06/Validacao');
  * @param {number} k - precisão do logarítimo
  */
 function logaritimoNatural(n, k) {
-    Validacao.validarNumeroInteiroMenorQueLimite(n, 1);
-    Validacao.validarNumeroInteiroMenorQueLimite(k, 2, "Parâmetro 'k' inválido!");
+  Validacao.validarNumeroInteiroMenorQueLimite(n, 1);
+  Validacao.validarNumeroInteiroMenorQueLimite(k, 2, "Parâmetro 'k' inválido!");
 
   let e = 1 + n;
   let numerador = n;

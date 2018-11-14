@@ -6,7 +6,7 @@ const Validacao = require('../topico-06/Validacao');
  * @param {numero} n - número para representar o número a ser verificado se é primo ou não
  */
 function primo(n) {
-    Validacao.validarNumeroInteiroMenorQueLimite(n, 2);
+  Validacao.validarNumeroInteiroMenorQueLimite(n, 2);
 
   for (let i = 2; i < n; i += 1) {
     if (n % i === 0) {

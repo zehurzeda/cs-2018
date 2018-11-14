@@ -9,16 +9,20 @@ const Validacao = require('../topico-06/Validacao');
 function maiorDivisorComum(a, b) {
   Validacao.validarNumeroInteiroMenorQueLimite(a, b);
   Validacao.validarNumeroInteiroMenorQueLimite(b, 1);
-  while (b !== 0) {
-    let m = a % b;
-    a = b;
-    b = m;
+
+  let aVar = a;
+  let bVar = b;
+
+  while (bVar !== 0) {
+    const m = aVar % bVar;
+    aVar = b;
+    bVar = m;
   }
-  return a;
+  return aVar;
 }
 
 /**
- * Maior divisor comum utilizando subtrações - Função que retorna o maior divisor comum entre a e b 
+ * Maior divisor comum utilizando subtrações - Função que retorna o maior divisor comum entre a e b
  * sem o uso do operador '%', realizando o cálculo somente com subtraçoes
  *
  * @param {number} a
@@ -27,16 +31,19 @@ function maiorDivisorComum(a, b) {
 function maiorDivisorComumSub(a, b) {
   Validacao.validarNumeroInteiroMenorQueLimite(a, b);
   Validacao.validarNumeroInteiroMenorQueLimite(b, 1);
-  while (a !== b) {
-    if (a > b) {
-      a = a - b;
+
+  let aVar = a;
+  let bVar = b;
+
+  while (aVar !== bVar) {
+    if (aVar > bVar) {
+      aVar -= bVar;
     } else {
-      b = b - a;
+      bVar -= aVar;
     }
   }
-  return a;
+  return aVar;
 }
 
 exports.maiorDivisorComum = maiorDivisorComum;
 exports.maiorDivisorComumSub = maiorDivisorComumSub;
-

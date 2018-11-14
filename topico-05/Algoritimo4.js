@@ -13,7 +13,7 @@ function mod(dividendo, divisor) {
 
   let s = dividendo;
   while (divisor <= s) {
-    s = s - divisor;
+    s -= divisor;
   }
   return s;
 }

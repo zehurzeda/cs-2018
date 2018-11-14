@@ -1,8 +1,8 @@
 const { expect } = require('chai');
 const Operacao = require('../Algoritimo14');
 
-describe("Algoritimo 14", function() {
-  it("3 é primo!", function() {
+describe('Algoritimo 14', () => {
+  it('3 é primo!', () => {
     expect(Operacao.primo(3)).to.eql(true);
   });
 });

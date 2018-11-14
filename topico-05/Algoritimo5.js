@@ -10,7 +10,7 @@ function somaNaturais(n) {
   Validacao.validarNumeroInteiroMenorQueLimite(
     n,
     1,
-    'Quantidade de números naturais a serem somados não pode ser menor que 1'
+    'Quantidade de números naturais a serem somados não pode ser menor que 1',
   );
 
   let i = 2;

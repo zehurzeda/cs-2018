@@ -8,9 +8,9 @@ const Validacao = require('../topico-06/Validacao');
  * @param {number} k
  */
 function razaoAurea(x, y, k) {
-    Validacao.validarNumeroInteiroMenorQueLimite(x, 0, "Parâmetro 'x' inválido");
-    Validacao.validarNumeroInteiroMenorQueLimite(y, x + 1, "Parâmetro 'y' inválido");
-    Validacao.validarNumeroInteiroMenorQueLimite(k, 1, "Parâmetro 'k' inválido");
+  Validacao.validarNumeroInteiroMenorQueLimite(x, 0, "Parâmetro 'x' inválido");
+  Validacao.validarNumeroInteiroMenorQueLimite(y, x + 1, "Parâmetro 'y' inválido");
+  Validacao.validarNumeroInteiroMenorQueLimite(k, 1, "Parâmetro 'k' inválido");
 
   let c = y;
   let a = x;

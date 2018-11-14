@@ -7,10 +7,10 @@ const Validacao = require('../topico-06/Validacao');
  * @param {number} b
  */
 function produto(a, b) {
-    Validacao.validarNumeroInteiroMenorQueLimite(a, 0);
-    Validacao.validarNumeroInteiroMenorQueLimite(b, 0);
-    let totalParcela = a;
-    let parcela = b;
+  Validacao.validarNumeroInteiroMenorQueLimite(a, 0);
+  Validacao.validarNumeroInteiroMenorQueLimite(b, 0);
+  let totalParcela = a;
+  let parcela = b;
 
   if (b < a) {
     totalParcela = b;

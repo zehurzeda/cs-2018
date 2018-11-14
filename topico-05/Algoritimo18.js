@@ -10,12 +10,12 @@ function fibonacci(n) {
 
   let a = 0;
   let c = 1;
-  if (n == 0 || n == 1) {
+  if (n === 0 || n === 1) {
     return n;
   }
-  for (let i = 2; i <= n; i++) {
-    let t = c;
-    c = c + a;
+  for (let i = 2; i <= n; i += 1) {
+    const t = c;
+    c += a;
     a = t;
   }
   return c;
