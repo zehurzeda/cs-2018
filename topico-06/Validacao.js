@@ -86,9 +86,53 @@ function validarNumeroInteiroMenorQueLimite(numero, valorLimite, mensagemDeErro 
   }
 }
 
+/**
+ * 
+ * @param {[number]} array 
+ * @param {number} tamanho 
+ */
+function validarTamanhoArray(array, tamanho) {
+  validarNumeroInteiro(tamanho);
+  validarArray(array);
+  
+  if(array.length !== tamanho) {
+    throw new Error(`O tamanho do array é diferente de ${tamanho}`);
+  }
+}
+
+/**
+ * Verifica se o obj passado é array
+ * 
+ * @param {*} obj - Objeto a ser verificado
+ * @throws {Error} - Se o obj passado não for um array
+ */
+function validarArray(obj) {
+  if(!Array.isArray(obj)){
+    throw new Error('Se esperava um array, mas foi recebido ' + typeof(obj));
+  }
+  valoresArrayZerados(obj);
+}
+
+/**
+ * Verifica se há valores que não estão zerados no array
+ * 
+ * @param {Array} arr - Array para ser validado
+ */
+function valoresArrayZerados(arr) {
+  arr.forEach(element => {
+    validarNumeroInteiro(element);
+    if(element !== 0) {
+      throw new Error('Há valores que não estão zerados no array');
+    }
+  });
+}
+
 exports.validaDia = validaDia;
 exports.validaMes = validaMes;
 exports.validaAno = validaAno;
 exports.validarNumeroInteiroMenorQueLimite = validarNumeroInteiroMenorQueLimite;
 exports.validarNumeroInteiro = validarNumeroInteiro;
 exports.validarSeEhNumero = validarSeEhNumero;
+exports.validarTamanhoArray = validarTamanhoArray;
+exports.validarArray = validarArray;
+exports.valoresArrayZerados = valoresArrayZerados;

@@ -1,16 +1,21 @@
 const Validacao = require('../topico-06/Validacao');
 
 /**
- * Primo - Algorítimo para verificar se o número é primo ou não
+ *  Crivo de Eratostenes - Recebe um vetor e um número para verificar quais posições do vetor tem o index primo ou não
  *
- * @param {numero} n - número para representar o número a ser verificado se é primo ou não
+ * @param {[number]} vetorIndicativo - Vetor com {posicoes} posiçoes preenchidas inicalmente com 0 para retornar
+ * @param {numero} posicoes - Indicador do tamanho do array
  */
-function crivoEratostenes(a, n) {
-  for (let i = 2; i <= Math.sqrt(n); i += 1) {
-    if (a[i] === 0) {
+function crivoEratostenes(vetorIndicativo, posicoes) {
+
+  Validacao.validarTamanhoArray(vetorIndicativo, posicoes);
+
+  for (let i = 2; i <= Math.sqrt(posicoes); i += 1) {
+
+    if (vetorIndicativo[i] === 0) {
       let multiplo = i + i;
-      while(multiplo <= n) {
-        a[multiplo] = 1;
+      while (multiplo <= posicoes) {
+        vetorIndicativo[multiplo] = 1;
         multiplo += i;
       }
     }

@@ -1,8 +1,6 @@
 const Operacao = require("../Algoritimo14");
 const expect = require("chai").expect;
 
-console.log(Operacao.primo(3));
-
 describe("Algoritimo 14", function() {
   it("3 é primo!", function() {
     expect(Operacao.primo(3)).to.eql(true);
