@@ -9,6 +9,7 @@ const Validacao = require('../topico-06/Validacao');
 function crivoEratostenes(vetorIndicativo, posicoes) {
 
   Validacao.validarTamanhoArray(vetorIndicativo, posicoes);
+  Validacao.valoresArrayZerados(vetorIndicativo);
 
   for (let i = 2; i <= Math.sqrt(posicoes); i += 1) {
 

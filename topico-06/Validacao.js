@@ -1,6 +1,6 @@
 /**
  * Verificação se o valor do dia está entre 1 e 31
- * 
+ *
  * @param {number} dia - número que representa o dia
  * @throws {Error} - Se o dia for < 0 ou > 31
  */
@@ -14,7 +14,7 @@ function validaDia(dia) {
 
 /**
  * Verificação se o valor do mês é do tipo está entre 1 e 12
- * 
+ *
  * @param {number} mes - número que representa o mes
  * @throws {Error} Se o valor passado < 1 ou > 12
  */
@@ -28,14 +28,14 @@ function validaMes(mes) {
 
 /**
  * Verificação se o valor do ano é maior que 1753
- * 
+ *
  * @param {number} ano - número que representa o ano
  * @throws {Error} Se o valor passado < 1753
  */
 function validaAno(ano) {
   validarSeEhNumero(ano);
   validarNumeroInteiro(ano);
-  
+
   if (ano < 1753) {
     throw new Error('Ano Inválido!');
   }
@@ -77,7 +77,11 @@ function validarNumeroInteiro(numero) {
  * @param {string} mensagemDeErro - A mensagem de erro que será retornada se numero < valorLimite
  * @throws {Error} - com a mensagemDeErro se o numero menor que o valor limite
  */
-function validarNumeroInteiroMenorQueLimite(numero, valorLimite, mensagemDeErro = 'Parâmetro inválido!') {
+function validarNumeroInteiroMenorQueLimite(
+  numero,
+  valorLimite,
+  mensagemDeErro = 'Parâmetro inválido!'
+) {
   validarNumeroInteiro(numero);
   validarNumeroInteiro(valorLimite);
 
@@ -87,43 +91,48 @@ function validarNumeroInteiroMenorQueLimite(numero, valorLimite, mensagemDeErro 
 }
 
 /**
- * 
- * @param {[number]} array 
- * @param {number} tamanho 
+ *
+ * @param {[number]} array
+ * @param {number} tamanho
  */
 function validarTamanhoArray(array, tamanho) {
   validarNumeroInteiro(tamanho);
   validarArray(array);
-  
-  if(array.length !== tamanho) {
+
+  if (array.length !== tamanho) {
     throw new Error(`O tamanho do array é diferente de ${tamanho}`);
   }
 }
 
 /**
  * Verifica se o obj passado é array
- * 
+ *
  * @param {*} obj - Objeto a ser verificado
  * @throws {Error} - Se o obj passado não for um array
  */
 function validarArray(obj) {
-  if(!Array.isArray(obj)){
-    throw new Error('Se esperava um array, mas foi recebido ' + typeof(obj));
+  if (!Array.isArray(obj)) {
+    throw new Error('Se esperava um array, mas foi recebido ' + typeof obj);
   }
-  valoresArrayZerados(obj);
 }
 
 /**
  * Verifica se há valores que não estão zerados no array
- * 
+ *
  * @param {Array} arr - Array para ser validado
  */
 function valoresArrayZerados(arr) {
   arr.forEach(element => {
     validarNumeroInteiro(element);
-    if(element !== 0) {
+    if (element !== 0) {
       throw new Error('Há valores que não estão zerados no array');
     }
+  });
+}
+
+function validarSeArrayPossuiSomenteNumeros(arr) {
+  arr.forEach(element => {
+    validarNumeroInteiro(element);
   });
 }
 
@@ -136,3 +145,4 @@ exports.validarSeEhNumero = validarSeEhNumero;
 exports.validarTamanhoArray = validarTamanhoArray;
 exports.validarArray = validarArray;
 exports.valoresArrayZerados = valoresArrayZerados;
+exports.validarSeArrayPossuiSomenteNumeros = validarSeArrayPossuiSomenteNumeros;
