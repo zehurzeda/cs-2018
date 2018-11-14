@@ -1,4 +1,4 @@
-const Validacao = require('./Validacao');
+const Validacao = require('../topico-06/Validacao');
 
 /**
  * Soma os n primeiros números naturais
@@ -7,7 +7,11 @@ const Validacao = require('./Validacao');
  * @returns {number} com a soma dos n primeiros números naturais
  */
 function somaNaturais(n) {
-  Validacao.validarParametro(n);
+  Validacao.validarNumeroInteiroMenorQueLimite(
+    n,
+    1,
+    'Quantidade de números naturais a serem somados não pode ser menor que 1'
+  );
 
   let i = 2;
   let s = 1;

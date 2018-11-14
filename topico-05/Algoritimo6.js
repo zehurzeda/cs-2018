@@ -1,13 +1,13 @@
-const Validacao = require('./Validacao');
+const Validacao = require('../topico-06/Validacao');
 
 /**
  * Fatorial
  *
- * @param {number} n - número para representar o número que se quer saber o fatorial
+ * @param {number} n - Número que se quer saber o fatorial
  * @returns {number} com o resultado de fatorial de n
  */
 function fatorial(n) {
-  Validacao.validarParametro(n);
+  Validacao.validarNumeroInteiroMenorQueLimite(n, 1, 'O parâmetro não pode ser menor que 1!');
 
   let i = 2;
   let f = 1;

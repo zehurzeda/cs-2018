@@ -1,4 +1,4 @@
-const Validacao = require('./Validacao');
+const Validacao = require('../topico-06/Validacao');
 
 /**
  * Produto - função para retornar o resultado de a * b usando somas
@@ -7,9 +7,10 @@ const Validacao = require('./Validacao');
  * @param {number} b
  */
 function produto(a, b) {
-  Validacao.validarParametros(a, b);
-  let totalParcela = a;
-  let parcela = b;
+    Validacao.validarNumeroInteiroMenorQueLimite(a, 0);
+    Validacao.validarNumeroInteiroMenorQueLimite(b, 0);
+    let totalParcela = a;
+    let parcela = b;
 
   if (b < a) {
     totalParcela = b;
